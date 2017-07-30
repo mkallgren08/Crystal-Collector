@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crystal Collector</title>
+	<!-- Reset CSS -->
+<!-- 	<link rel="stylesheet" type="text/css" href=""> -->
+	<!-- Bootstrap CSS -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<!-- jQuery CDN -->
+	<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous"></script>
+	<!-- Custom Javascript -->
+	<script type = "text/javascript" src = "./assets/javascript/game.js"></script>
+
+	
+</head>
+<body>
+	<div class="container body-wrapper">
+		<div class="page-header header">
+			<h1> <strong>Crystal Collectors! </strong></h1>
+		</div>
+		<!-- Game Explanation & Rules: All of Frist Row-->
+		<div class="row"> <!-- Start First Row -->
+			<div class="col-md-12">
+				<h3>Rules go here!</h3>
+			</div>
+		</div> <!-- End First Row: Game Rules -->
+
+		<!-- Current Target & Wins/Losses -->
+		<div class="row"> <!-- Start Second Row -->
+			<!-- Current Target: Left Half of Second Row-->
+			<div class="col-md-6">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Target Amount</h3>
+				  </div>
+				  <div class="panel-body">
+				    <span id = "score-goal">100</span> 
+				    <span id = "unit-value">kg</span>
+				  </div>
+				</div>
+			</div> <!-- End Current Target -->
+
+			<!-- Wins and Losses Record : Right Half of Second Row-->
+			<div class="col-md-6">
+			<!-- Wins Panel -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+						  <div class="panel-body">
+						    Completed Expeditions: <span id = "wins">0</span>
+						  </div>
+						</div>					
+					</div>
+				</div> <!-- End Wins Panel -->
+
+			<!-- Losses Panel -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+						  <div class="panel-body">
+						    Unsuccesful Expeditions: <span id = "losses">0</span>
+						  </div>
+						</div>					
+					</div>
+				</div> <!-- End Losses Pane -->
+			</div> <!-- End Wins and Losses Record -->
+		</div> <!-- End Second Row: Current Target & Wins/Losses -->
+		
+		<!-- Current Score, Return-to-Camp, and Crystal Buttons -->
+		<div class="row"> <!-- Start Third Row -->
+			<div class="col-md-6">
+				<div class="row"> <!-- Start Row - Current Amount -->
+					<div class="col-md-12">
+						<div class="panel panel-default">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Current Amount</h3>
+						  </div>
+						  <div class="panel-body">
+						    <span id = "score-goal">100</span> 
+						    <span id = "unit-value">kg</span>
+						  </div>
+					 	</div>
+					</div>
+				</div> <!-- End Current Amount -->
+
+				<div class="row"> <!-- Start Row - Return-to-Camp Button -->
+					<div class="col-md-12">
+						<button type = "button" class = "btn btn-danger return-btn" aria-label = "Left Align"
+						id = "camprtn"><strong>Return to Camp</strong></button>
+					</div>
+				</div> <!-- End Row - Return-to-Camp Button -->
+			</div> 
+
+			<!-- Crystal Buttons : Right Half of Third Row-->
+			<div class="col-md-6">
+			<!-- Top Two Crystals -->
+				<div class="row"> <!-- Begin Top Row of Crystals -->
+					<div class="col-md-6"> <!-- Top Left Crystal - Emerald -->
+						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "emerald">
+						  <span class="glyphicon glyphicon-align-left" aria-hidden="true" ></span>
+						</button>				
+					</div> <!-- End Emerald -->
+					<div class="col-md-6"> <!-- Top Right Crystal - Sapphire -->
+						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "sapphire>
+						  <span class="glyphicon glyphicon-align-right" aria-hidden="true" "></span>
+						</button>				
+					</div> <!-- Sapphire -->
+
+				</div> <!-- End Top Row of Crystals -->
+
+			<!-- Bottom Two Crystals -->
+				<div class="row"> <!-- Begin Bottom Row of Crystals -->
+					<div class="col-md-6"> <!-- Bottom Left Crystal - Ruby -->
+						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "ruby">
+						  <span class="glyphicon glyphicon-align-left crystal-btn" aria-hidden="true" ></span>
+						</button>				
+					</div> <!-- End Ruby -->
+
+					<div class="col-md-6"> <!-- Bottom Right Crystal - Diamond -->
+						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "diamond">
+						  <span class="glyphicon glyphicon-align-right" aria-hidden="true" ></span>
+						</button>				
+					</div> <!-- Diamond -->
+				</div> <!-- End Bottom Row of Crystals -->
+
+			<!-- Bottom Two Crystals -->
+				<div class="row">
+					<div class="col-md-6"> 
+						
+					</div>
+				</div> <!-- End Bottom Two Crystals -->
+			</div> <!-- End Wins and Losses Record -->
+		</div> <!-- End Third Row: Current Target & Wins/Losses -->
+
+		<div class="container-fluid footer">
+			Copyright &copy; Michael Kallgren 2017
+		</div>
+			
+
+
+	</div> <!-- End Body Wrap Container -->
+	
+</body>
+</html>
