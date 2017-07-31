@@ -13,7 +13,6 @@
 	<!-- jQuery CDN -->
 	<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   	crossorigin="anonymous"></script>
-	<!-- Custom Javascript -->
 	<script type = "text/javascript" src = "./assets/javascript/game.js"></script>
 
 	
@@ -21,12 +20,13 @@
 <body>
 	<div class="container body-wrapper">
 		<div class="page-header header">
-			<h1> <strong>Crystal Collectors! </strong></h1>
+			<h1> <strong id = "title">Crystal Collectors! </strong></h1>
 		</div>
 		<!-- Game Explanation & Rules: All of Frist Row-->
 		<div class="row"> <!-- Start First Row -->
-			<div class="col-md-12">
-				<h3>Rules go here!</h3>
+			<div class="col-md-12 game-rules">
+				<h3 class = "rules-title">College Geological Survey Teams!</h3>
+				<p class = "rules-text"> Welcome to the jungle aspiring crystal hunters! You’re here as part of an initiative with several universities’ geology departments to go out and gather what raw materials you can in one of the few places that hasn’t been industrially mined yet! The reason why the local crystal deposits haven’t been mined yet is quite simple – the terrain is both daunting and ecologically sensitive. We can’t bring heavy tools and equipment in – the biggest pieces of equipment we’ve reliably trekked in have been horses. As such, you will have to be sure to sure not to overload yourselves and your transport – otherwise you risk serious injury to both you and the transport. The other thing is that we don’t know what kinds of impurities are present in different crystal veins – this could realty affect their weight, worth, or volume. Because of this, we’ll send you out with a target goal of material in mind – either in weight, volume, or monetary value – try to get as close as you can to that goal so we can recoup our costs and make a small profit to help fund future expeditions, but do NOT OVERLOAD YOURSELVES. You may not know until you start going down if you’ve overloaded yourselves, so just try to be careful! Good luck, and have a great adventure!</p>
 			</div>
 		</div> <!-- End First Row: Game Rules -->
 
@@ -36,10 +36,10 @@
 			<div class="col-md-6">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
-				    <h3 class="panel-title">Target Amount</h3>
+				    <h3 class="panel-title"><strong>Target Amount</strong></h3>
 				  </div>
-				  <div class="panel-body">
-				    <span id = "score-goal">100</span> 
+				  <div class="panel-body amounts">
+				    <span id = "score-goal"></span> 
 				    <span id = "unit-value">kg</span>
 				  </div>
 				</div>
@@ -51,8 +51,10 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="panel panel-default">
-						  <div class="panel-body">
-						    Completed Expeditions: <span id = "wins">0</span>
+						  <div class="panel-body expedition-panel">
+						  	<div class="expedition-panel-text">
+						    	<strong>Completed Expeditions: <span id = "wins"></span></strong>
+						    </div>
 						  </div>
 						</div>					
 					</div>
@@ -62,8 +64,10 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="panel panel-default">
-						  <div class="panel-body">
-						    Unsuccesful Expeditions: <span id = "losses">0</span>
+						  <div class="panel-body expedition-panel">
+						  	<div class="expedition-panel-text">
+						    	<strong>Unsuccesful Expeditions: <span id = "losses">0</span></strong>
+						    </div>
 						  </div>
 						</div>					
 					</div>
@@ -78,10 +82,10 @@
 					<div class="col-md-12">
 						<div class="panel panel-default">
 						  <div class="panel-heading">
-						    <h3 class="panel-title">Current Amount</h3>
+						    <h3 class="panel-title"><strong>Current Amount</strong></h3>
 						  </div>
-						  <div class="panel-body">
-						    <span id = "score-goal">100</span> 
+						  <div class="panel-body amounts">
+						    <span id = "score-actual"></span> 
 						    <span id = "unit-value">kg</span>
 						  </div>
 					 	</div>
@@ -89,10 +93,13 @@
 				</div> <!-- End Current Amount -->
 
 				<div class="row"> <!-- Start Row - Return-to-Camp Button -->
-					<div class="col-md-12">
-						<button type = "button" class = "btn btn-danger return-btn" aria-label = "Left Align"
-						id = "camprtn"><strong>Return to Camp</strong></button>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4 return-to-camp">
+						<button type = "button" class = "btn btn-lg btn-danger return-btn" id = "camprtn">
+							<strong>Return to Camp</strong>
+						</button>
 					</div>
+					<div class="col-sm-4"></div>
 				</div> <!-- End Row - Return-to-Camp Button -->
 			</div> 
 
@@ -100,14 +107,14 @@
 			<div class="col-md-6">
 			<!-- Top Two Crystals -->
 				<div class="row"> <!-- Begin Top Row of Crystals -->
-					<div class="col-md-6"> <!-- Top Left Crystal - Emerald -->
+					<div class="col-sm-6"> <!-- Top Left Crystal - Emerald -->
 						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "emerald">
-						  <span class="glyphicon glyphicon-align-left" aria-hidden="true" ></span>
+							<img src = "./assets/images/emerald.jpg" class = "crystal-image">
 						</button>				
 					</div> <!-- End Emerald -->
-					<div class="col-md-6"> <!-- Top Right Crystal - Sapphire -->
-						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "sapphire>
-						  <span class="glyphicon glyphicon-align-right" aria-hidden="true" "></span>
+					<div class="col-sm-6"> <!-- Top Right Crystal - Sapphire -->
+						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "sapphire">
+						 	<img src = "./assets/images/sapphire.jpg"  class = "crystal-image">
 						</button>				
 					</div> <!-- Sapphire -->
 
@@ -115,15 +122,15 @@
 
 			<!-- Bottom Two Crystals -->
 				<div class="row"> <!-- Begin Bottom Row of Crystals -->
-					<div class="col-md-6"> <!-- Bottom Left Crystal - Ruby -->
+					<div class="col-sm-6"> <!-- Bottom Left Crystal - Ruby -->
 						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "ruby">
-						  <span class="glyphicon glyphicon-align-left crystal-btn" aria-hidden="true" ></span>
+						 	<img src = "./assets/images/ruby.jpg"  class = "crystal-image">
 						</button>				
 					</div> <!-- End Ruby -->
 
-					<div class="col-md-6"> <!-- Bottom Right Crystal - Diamond -->
+					<div class="col-sm-6"> <!-- Bottom Right Crystal - Diamond -->
 						<button type="button" class="btn btn-default crystal-btn" aria-label="Left Align" id = "diamond">
-						  <span class="glyphicon glyphicon-align-right" aria-hidden="true" ></span>
+						  <img src = "./assets/images/diamond.jpg"  class = "crystal-image">
 						</button>				
 					</div> <!-- Diamond -->
 				</div> <!-- End Bottom Row of Crystals -->
@@ -137,13 +144,17 @@
 			</div> <!-- End Wins and Losses Record -->
 		</div> <!-- End Third Row: Current Target & Wins/Losses -->
 
-		<div class="container-fluid footer">
-			Copyright &copy; Michael Kallgren 2017
+		<div class="container footer">
+			<div class = "copyright">
+				Copyright &copy; Michael Kallgren 2017
+			</div>
 		</div>
 			
 
 
 	</div> <!-- End Body Wrap Container -->
 	
+	<!-- Custom Javascript -->
+
 </body>
 </html>
