@@ -7,7 +7,7 @@ $(document).ready(function() {
 	var targetAmount =0
 	var winExped = 0
 	var loseExped = 0
-	var unitType = ["kg", "lbs", "x 10^12 nanograms", "$ (thousands)", "buttloads"]
+	var unitType = ["kg", "lbs", "x 10^12 nanograms", "$ (thousands)", "buttloads", "pounds. Sterling. Like 'Doctor Who' money"]
 	var emeraldVal = 0
 	var rubyVal = 0
 	var sapphireVal = 0
@@ -86,7 +86,7 @@ $(document).ready(function() {
 		console.log(k)
 		var generatedUnit = unitType[k];
 		console.log("Units = "+ generatedUnit);
-		$("#unit-value").html(generatedUnit);
+		$(".unit-value").html(generatedUnit);
 	};
 
 	//--------------------------------------------------------
